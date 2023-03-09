@@ -1,2 +1,6 @@
-node_modules
-*.vsix
+*
+!LICENSE
+!package.json
+!syntaxes
+!language-configuration.json
+!README.md

@@ -28,7 +28,11 @@
       "patterns": [
         {
           "name": "keyword.control.flow.hcl",
-          "match": "quote| in "
+          "match": "quote"
+        },
+        {
+          "name": "keyword.control.flow.hcl",
+          "match": " in | in\n| in\\{"
         }
       ]
     },
@@ -38,19 +42,39 @@
       "match": "intsig|boolsig|int|bool"
     },
     "paren-expression": {
-      "begin": "'",
-      "end": "'",
-      "beginCaptures": {
-        "0": { "name": "punctuation.section.embedded.begin.c" }
-      },
-      "endCaptures": {
-        "0": { "name": "punctuation.section.embedded.end.c" },
-        "1": { "name": "source.c" }
-      },
-      "name": "meta.embedded.line.c",
-      "patterns": [ {
-        "include": "source.c"
-      }
+      "patterns": [
+        {
+          "begin": "'",
+          "end": "(?:(')|(?<!\\\\)(?:(?=\\n)|(?<=^\\n|[^\\\\]\\n)(?=$)))",
+          "beginCaptures": {
+            "0": { "name": "punctuation.section.embedded.begin.c" }
+          },
+          "endCaptures": {
+            "1": { "name": "punctuation.section.embedded.end.c" },
+            "2": { "name": "source.c" }
+          },
+          "name": "meta.embedded.line.c",
+          "patterns": [ {
+            "include": "source.c"
+          }
+          ]
+        },
+        {
+          "begin": "\\{",
+          "end": "\\}",
+          "beginCaptures": {
+            "0": { "name": "punctuation.definition.list.begin.hcl" }
+          },
+          "endCaptures": {
+            "0": { "name": "punctuation.definition.list.end.hcl" }
+          },
+          "patterns": [
+            {
+              "name": "punctuation.separator.element.hcl",
+              "match": ","
+            }
+          ]
+        }
       ]
     },
     "comments-base": {
@@ -79,7 +103,15 @@
         },
         {
           "match": "(\\=)",
-          "name": "keyword.operator.assignment.cpp"
+          "name": "keyword.operator.assignment.hcl"
+        },
+        {
+          "match": "%|\\*|/|-|\\+",
+          "name": "keyword.operators.arithmetic.hcl"
+        },
+        {
+          "match": ";",
+          "name": "punctuation.terminator.statement.hcl"
         }
       ]
     },

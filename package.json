@@ -1,6 +1,6 @@
 {
   "name": "hcl",
-  "displayName": "hardware-control-language-support",
+  "displayName": "HCL (Hardware Control Language) Support",
   "description": "",
   "version": "0.0.1",
   "engines": {
@@ -12,7 +12,7 @@
   "contributes": {
     "languages": [{
       "id": "hcl",
-      "aliases": ["hcl", "hcl"],
+      "aliases": ["HCL", "hcl"],
       "extensions": [".hcl"],
       "configuration": "./language-configuration.json"
     }],
