@@ -1,0 +1,30 @@
+{
+  "name": "hcl",
+  "displayName": "hardware-control-language-support",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.76.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "hcl",
+      "aliases": ["hcl", "hcl"],
+      "extensions": [".hcl"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [
+      {
+      "language": "hcl",
+      "scopeName": "source.hcl",
+      "path": "./syntaxes/hcl.tmLanguage.json",
+      "embeddedLanguages": {
+        "meta.embedded.line.c": "c"
+      }
+    }
+  ]
+  }
+}

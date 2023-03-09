@@ -1,0 +1,68 @@
+{
+  "scopeName": "source.hcl",
+  "patterns": [
+    { "include": "#statements" },
+    { "include": "#paren-expression" },
+    { "include": "#comments-base" },
+  ],
+
+  "repository": {
+    "statements": {
+      "patterns": [
+        {
+          "include": "#keywords"
+        },
+        {
+          "include": "#typedeclare"
+        },
+        {
+          "include": "#operators"
+        }
+      ]
+    },
+
+    "keywords": {
+      "name": "keyword.control.flow.hcl",
+      "match": "quote"
+    },
+
+    "typedeclare": {
+      "name": "storage.type.hcl",
+      "match": "intsig|boolsig|int|bool"
+    },
+    "paren-expression": {
+      "begin": "\\'",
+      "end": "\\'",
+      "beginCaptures": {
+        "0": { "name": "punctuation.section.embedded.begin.c" }
+      },
+      "endCaptures": {
+        "0": { "name": "punctuation.section.embedded.end.c" },
+        "1": { "name": "source.c" }
+      },
+      "name": "meta.embedded.line.c",
+      "patterns": [ {
+        "include": "source.c"
+      }
+      ]
+    },
+    "comments-base": {
+			"name": "comment.line.number-sign.hcl",
+			"begin": "(\\#)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.definition.comment.hcl"
+				}
+			},
+			"end": "($)"
+		},
+    "operators": {
+      "patterns": [
+        {
+          "match": "&&",
+          "name": "keyword.operator.logical.hcl"
+        }
+      ]
+    }
+  }
+}
