@@ -2,5 +2,9 @@
 !LICENSE
 !package.json
 !syntaxes
+!syntaxes/*
 !language-configuration.json
 !README.md
+!images/*
+!images
+!CHANGELOG.md

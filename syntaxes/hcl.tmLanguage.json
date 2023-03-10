@@ -28,26 +28,40 @@
       "patterns": [
         {
           "name": "keyword.control.flow.hcl",
-          "match": "quote"
+          "match": "(?-mix:(?<!\\w)(?:quote)(?!\\w))"
         },
         {
-          "name": "keyword.control.flow.hcl",
-          "match": " in | in\n| in\\{"
+          "match": "(\n| )(in)(\n| )",
+          "captures": {
+            "2": {
+              "name": "keyword.control.flow.hcl"
+            }
+          },
+          "comment": "I highly recommand inject space before and after keyword `in`"
         }
       ]
     },
 
     "typedeclare": {
-      "name": "storage.type.hcl",
-      "match": "intsig|boolsig|int|bool"
+      "patterns" : [
+        {
+          "name": "storage.type.hcl",
+          "match": "(?-mix:(?<!\\w)(?:wordsig|boolsig|bool|word)(?!\\w))"
+        },
+        {
+          "name": "storage.type.hcl",
+          "match": "(?-mix:(?<!\\w)(?:intsig|int)(?!\\w))",
+          "comment": "Supported in HCL?"
+        }
+      ]
     },
     "paren-expression": {
       "patterns": [
         {
           "begin": "'",
-          "end": "(?:(')|(?<!\\\\)(?:(?=\\n)|(?<=^\\n|[^\\\\]\\n)(?=$)))",
+          "end": "'|(?<!\\\\)(?=\\s*\\n)",
           "beginCaptures": {
-            "0": { "name": "punctuation.section.embedded.begin.c" }
+            "1": { "name": "punctuation.section.embedded.begin.c" }
           },
           "endCaptures": {
             "1": { "name": "punctuation.section.embedded.end.c" },
@@ -94,7 +108,7 @@
           "name": "keyword.operator.logical.hcl"
         },
         {
-          "match": "!=|==",
+          "match": "!=|<=|>=|==|<|>",
           "name": "keyword.operator.comparison.hcl"
         },
         {
@@ -106,7 +120,7 @@
           "name": "keyword.operator.assignment.hcl"
         },
         {
-          "match": "%|\\*|/|-|\\+",
+          "match": "-|\\+",
           "name": "keyword.operators.arithmetic.hcl"
         },
         {

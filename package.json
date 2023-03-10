@@ -1,14 +1,29 @@
 {
-  "name": "hcl",
+  "name": "hcl-support",
   "displayName": "HCL (Hardware Control Language) Support",
-  "description": "",
-  "version": "0.0.1",
+  "description": "Provide language support for HCL.",
+  "version": "0.1.0",
+  "icon": "images/csapp-hcl-icon.png",
+  "publisher": "BojunRen",
+  "author": {
+    "name": "BojunRen"
+  },
+  "license": "SEE LICENSE IN LICENSE",
   "engines": {
-    "vscode": "^1.76.0"
+    "vscode": "^1.48.0"
   },
   "categories": [
-    "Programming Languages"
+    "Programming Languages",
+    "Education"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Eitheages/HCL-Support"
+  },
+  "bugs": {
+    "url": "https://github.com/Eitheages/HCL-Support/issues",
+    "email": "albert.cauchy725@gmail.com"
+  },
   "contributes": {
     "languages": [{
       "id": "hcl",
