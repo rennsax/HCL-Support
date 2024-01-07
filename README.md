@@ -10,7 +10,7 @@ This VS Code extension provides syntax highlighting for HCL.
 2. Open your terminal, `git clone` this repo.
 
     ```shell
-    git clone https://github.com/Eitheages/HCL-Support.git hcl-ext
+    git clone https://github.com/rennsax/HCL-Support.git hcl-ext
     ```
 3. Move or copy the whole folder to where your VS Code  extensions are installed. For Mac or Linux, you can run:
     ```shell
