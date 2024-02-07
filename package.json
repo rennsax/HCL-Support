@@ -2,7 +2,7 @@
   "name": "hcl-support",
   "displayName": "HCL (Hardware Control Language) Support",
   "description": "Provide language support for HCL.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "icon": "images/csapp-hcl-icon.png",
   "publisher": "BojunRen",
   "author": {
@@ -18,11 +18,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Eitheages/HCL-Support"
+    "url": "https://github.com/rennsax/HCL-Support"
   },
   "bugs": {
-    "url": "https://github.com/Eitheages/HCL-Support/issues",
-    "email": "albert.cauchy725@gmail.com"
+    "url": "https://github.com/rennsax/HCL-Support/issues",
+    "email": "bj.ren.coding@outlook.com"
   },
   "contributes": {
     "languages": [{
