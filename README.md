@@ -10,6 +10,13 @@ This VS Code extension provides syntax highlighting for HCL.
 
 [Market](https://marketplace.visualstudio.com/items?itemName=BojunRen.hcl-support).
 
+## Publish
+
+```sh
+vsce login # provide Azure DevOps personal access token
+vsce publish # need some time to validate
+```
+
 ## More Information
 
 If you find any bug or want to make some suggestions, open an issue or contact me directly.
